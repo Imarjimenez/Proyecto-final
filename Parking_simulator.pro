@@ -25,16 +25,33 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
+        carro.cpp \
+        jardin.cpp \
+        login.cpp \
         main.cpp \
-        mainwindow.cpp
+        mainwindow.cpp \
+        tiempo.cpp \
+        velocimetro.cpp \
+        vidas.cpp \
+        volante.cpp
 
 HEADERS += \
-        mainwindow.h
+        carro.h \
+        jardin.h \
+        login.h \
+        mainwindow.h \
+        tiempo.h \
+        velocimetro.h \
+        vidas.h \
+        volante.h
 
 FORMS += \
-        mainwindow.ui
+    mainwindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    images.qrc
