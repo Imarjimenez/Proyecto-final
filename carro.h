@@ -1,37 +1,42 @@
+
+
 #ifndef CARRO_H
 #define CARRO_H
 #include <QGraphicsItem>
 #include <QPainter>
-#include <QPixmap>
 #include <QObject>
-#include <math.h>
-#include <stdlib.h>
-#include <stdio.h>
-#include <QKeyEvent>
-#include <QMainWindow>
-#include <QDebug>
+#include <QPixmap>
 
-class Carro: public QObject, public QGraphicsItem
+
+
+#include <QRectF>
+
+class Carro : public QObject, public QGraphicsItem
 {
     Q_OBJECT
 public:
-    Carro(QObject * parent = nullptr);
+    explicit Carro(QObject * parent = nullptr);
+
+
     QPixmap *pixmap;
 
 
-
-    float Velx,Vely,VV,aX,aY,dt,angulo;
     int posx, posy;
+    int velocidad=5;
+    float ancho;
+    float alto;
     int getPosx();
     void setPosx(int px);
     int getPosy();
     void setPosy(int py);
     QRectF boundingRect() const;
-    void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget = nullptr);
-    void actualizar();
-
+    void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
+    void Up();
+    void Down();
+    void Left();
+    void Rigth();
 
 
 };
 
-#endif // CARRO_H
+#endif // CUERPO_H
