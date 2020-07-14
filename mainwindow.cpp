@@ -8,14 +8,28 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     scene = new QGraphicsScene;
     ui->graphicsView->setScene(scene);
-    scene->setSceneRect(0,0,1200,800);
+    scene->setSceneRect(0,0,1200,700);
+    ui->graphicsView->setScene(scene);
+    ui->centralwidget->adjustSize();
+    ui->graphicsView->resize(scene->width(),scene->height());
+    this->resize(ui->graphicsView->width()+100, ui->graphicsView->height()+100);
 
 
 
 
+    timer = new QTimer(this);
+    connect(timer,SIGNAL(timeout()),this,SLOT(actualizar()));
+    timer->start(20);
+
+    QTimer *cronometro= new QTimer(this);
+    connect(cronometro,SIGNAL(timeout()),this,SLOT(activartiempo()));
+    cronometro->start(1000);
 
     personaje = new Carro();
     scene->addItem(personaje);
+    numero1= new Jardin(400,400,0,200);
+
+    scene->addItem(numero1);
 
 }
 
@@ -24,6 +38,18 @@ MainWindow::~MainWindow()
 
     delete scene;
     delete ui;
+}
+
+void MainWindow::actualizar()
+{
+
+}
+
+void MainWindow::activartiempo()
+{
+    ui->lcdNumber->display(contador);
+    contador++;
+    if(contador>180) contador=0;
 }
 
 
@@ -54,6 +80,18 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
 
 
 
+}
+
+QList<Vidas *> MainWindow::eliminar(QList<Vidas *> lista, int pos)
+{
+    QList<Vidas*> aux;
+    for (int i=0;i<lista.size();i++) {
+        if(i!=pos){
+            aux.push_back(lista.at(i));
+        }
+
+    }
+    return aux;
 }
 
 //void MainWindow::niveles(){

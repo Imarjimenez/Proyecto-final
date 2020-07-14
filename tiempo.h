@@ -2,17 +2,19 @@
 #define TIEMPO_H
 
 #include <QThread>
+#include <QTimer>
 class Tiempo : public QThread
 {
     Q_OBJECT
 public:
-    Tiempo(int segundos, QObject *parent = nullptr);
-signals:
-    void timeOut();
-protected:
-    void run() override;
+    Tiempo();
+    int getTime();
+public slots:
+    void Activartiempo();
+
 private:
-    int mSegundos;
+    int contador=0;
+    QTimer *cronometro;
 };
 
 #endif // TIEMPO_H

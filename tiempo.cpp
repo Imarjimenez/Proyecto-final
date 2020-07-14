@@ -1,13 +1,20 @@
 #include "tiempo.h"
+#include "mainwindow.h"
 
-Tiempo::Tiempo(int segundos, QObject *parent)
-    : QThread (parent)
+Tiempo::Tiempo()
+
 {
-    mSegundos = segundos;
+    QTimer *cronometro= new QTimer(this);
+    connect(cronometro,SIGNAL(timeout()),this,SLOT(Activartiempo()));
+    cronometro->start(500);
 }
-void Tiempo::run(){
-    while(true){
-        emit timeOut();
-        QThread::msleep(mSegundos);
-    }
+
+int Tiempo::getTime()
+{
+    return contador;
+}
+void Tiempo::Activartiempo(){
+   contador++;
+   if(contador>9) contador=0;
+
 }
