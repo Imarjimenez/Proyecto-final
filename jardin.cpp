@@ -5,9 +5,10 @@ Jardin::Jardin()
 
 }
 
-Jardin::Jardin(int w_, int h_, int x, int y)
+Jardin::Jardin(int i,int w_, int h_, int x, int y)
 {
-    pixmap = new QPixmap(":/Photos/Jardin.png");
+    if(i==1) pixmap = new QPixmap(":/Photos/Jardin.png");
+    if (i==2)pixmap = new QPixmap(":/Photos/Jardin2.png");
     w = w_;
     h = h_;
     posx = x;

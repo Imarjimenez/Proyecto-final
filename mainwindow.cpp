@@ -8,11 +8,11 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     scene = new QGraphicsScene;
     ui->graphicsView->setScene(scene);
-    scene->setSceneRect(0,0,1200,700);
-    ui->graphicsView->setScene(scene);
-    ui->centralwidget->adjustSize();
-    ui->graphicsView->resize(scene->width(),scene->height());
-    this->resize(ui->graphicsView->width()+100, ui->graphicsView->height()+100);
+    scene->setSceneRect(0,0,800,600);
+//    ui->graphicsView->setScene(scene);
+//    //ui->centralwidget->adjustSize();
+//    ui->graphicsView->resize(scene->width(),scene->height());
+//    this->resize(ui->graphicsView->width()+200, ui->graphicsView->height());
 
 
 
@@ -27,9 +27,12 @@ MainWindow::MainWindow(QWidget *parent)
 
     personaje = new Carro();
     scene->addItem(personaje);
-    numero1= new Jardin(400,400,0,200);
+    numero1= new Jardin(1,67,207,0,300);
+    numero2= new Jardin(1,67,207,0,480);
+    numero3= new Jardin(1,67,207,0,120);
+    numero4= new Jardin(2,67,207,0,-40);
+    scene->addItem(numero1); scene->addItem(numero2);scene->addItem(numero3); scene->addItem(numero4);
 
-    scene->addItem(numero1);
 
 }
 

@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>789</width>
+    <width>884</width>
     <height>669</height>
    </rect>
   </property>
@@ -19,7 +19,7 @@
      <rect>
       <x>-20</x>
       <y>0</y>
-      <width>791</width>
+      <width>831</width>
       <height>671</height>
      </rect>
     </property>
@@ -27,8 +27,8 @@
    <widget class="QLCDNumber" name="lcdNumber">
     <property name="geometry">
      <rect>
-      <x>700</x>
-      <y>10</y>
+      <x>820</x>
+      <y>0</y>
       <width>64</width>
       <height>23</height>
      </rect>

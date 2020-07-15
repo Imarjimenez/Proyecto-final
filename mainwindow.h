@@ -40,7 +40,7 @@ private:
     QTimer *timer,*cronometro;
     QList<Vidas *> vidas;
     int contador=0;
-    Jardin *numero1;
+    Jardin *numero1,*numero2,*numero3,*numero4;
 
     void keyPressEvent(QKeyEvent *event);
     QList<Vidas*> eliminar(QList<Vidas*>lista,int pos);

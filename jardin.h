@@ -11,9 +11,10 @@ class Jardin: public QGraphicsItem
     int posx, posy;
     QPixmap *pixmap;
 
+
 public:
+    Jardin(int i,int w_, int h_, int x, int y);
     Jardin();
-    Jardin(int w_, int h_, int x, int y);
     int getW();
     void setW(int ancho);
     int getH();
