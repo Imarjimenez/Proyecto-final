@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
+#define MSEC 10
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -8,30 +9,26 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     scene = new QGraphicsScene;
     ui->graphicsView->setScene(scene);
+
     scene->setSceneRect(0,0,800,600);
-//    ui->graphicsView->setScene(scene);
-//    //ui->centralwidget->adjustSize();
-//    ui->graphicsView->resize(scene->width(),scene->height());
-//    this->resize(ui->graphicsView->width()+200, ui->graphicsView->height());
+    scene->setBackgroundBrush(QPixmap(":/Photos/menup.jpg"));
 
 
-
-
-    timer = new QTimer(this);
-    connect(timer,SIGNAL(timeout()),this,SLOT(actualizar()));
-    timer->start(20);
 
     QTimer *cronometro= new QTimer(this);
     connect(cronometro,SIGNAL(timeout()),this,SLOT(activartiempo()));
     cronometro->start(1000);
 
+    QTimer *tiempo= new QTimer(this);
+    connect(tiempo,SIGNAL(timeout()),this,SLOT(actualizar()));
+    tiempo->start(1000);
     personaje = new Carro();
-    scene->addItem(personaje);
-    numero1= new Jardin(1,67,207,0,300);
-    numero2= new Jardin(1,67,207,0,480);
-    numero3= new Jardin(1,67,207,0,120);
-    numero4= new Jardin(2,67,207,0,-40);
-    scene->addItem(numero1); scene->addItem(numero2);scene->addItem(numero3); scene->addItem(numero4);
+
+
+  scene->addItem(personaje);
+
+
+
 
 
 }
@@ -43,10 +40,7 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::actualizar()
-{
 
-}
 
 void MainWindow::activartiempo()
 {
@@ -55,7 +49,51 @@ void MainWindow::activartiempo()
     if(contador>180) contador=0;
 }
 
+void MainWindow::niveles()
+{
+    if(nivel == 0){
+            scene->setSceneRect(0,0,978,600);     //asigna el rectangulo que encierra la scene, determinado por h_limit y v_limit
+            ui->graphicsView->setScene(scene);
+            scene->setBackgroundBrush(QPixmap(":/Photos/menup.png"));
 
+        }
+        if(nivel == 1){ // menu
+            scene->setSceneRect(0,0,978,600);     //asigna el rectangulo que encierra la scene
+            ui->graphicsView->setScene(scene);
+            scene->addRect(scene->sceneRect());
+            scene->setBackgroundBrush(QPixmap(":/Photos/fondo.jpg"));
+
+            numero1= new Jardin(1,67,207,0,300);
+            numero2= new Jardin(1,67,207,0,480);
+            numero3= new Jardin(1,67,207,0,120);
+            numero4= new Jardin(2,67,207,0,-40);
+            scene->addItem(numero1); scene->addItem(numero2);scene->addItem(numero3);
+
+        }
+        if(nivel == 2){
+            scene->setSceneRect(0,0,978,600);     //asigna el rectangulo que encierra la scene
+            ui->graphicsView->setScene(scene);
+            scene->addRect(scene->sceneRect());
+            scene->setBackgroundBrush(QPixmap(":/Photos/fondo.jpg"));
+
+        }
+        if(nivel == 3){
+            scene->setSceneRect(0,0,978,600);     //asigna el rectangulo que encierra la scene, determinado por h_limit y v_limit
+            ui->graphicsView->setScene(scene);
+            scene->addRect(scene->sceneRect());
+            scene->setBackgroundBrush(QPixmap(":/Photos/fondo.jpg"));
+
+        }
+        if(nivel==4){
+            scene->setSceneRect(0,0,978,600);     //asigna el rectangulo que encierra la scene
+            ui->graphicsView->setScene(scene);
+
+            scene->addRect(scene->sceneRect());
+            scene->setBackgroundBrush(QPixmap(":/Photos/fondo.jpg"));
+
+        }
+
+}
 
 
 
@@ -63,22 +101,20 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
 {
 
 
-            if (event->key() == Qt::Key_D ){
+            if(event->key() == Qt::Key_D){
                 personaje->Rigth();
-            }
-            if (event->key() == Qt::Key_A ){
+
+           }
+            if (event->key() == Qt::Key_A){
                 personaje->Left();
             }
             if (event->key() == Qt::Key_W){
-                personaje->Up();
+                personaje->Up(vel);
 
             }
-
-
-
-
-
-
+            if (event->key() == Qt::Key_S){
+                personaje->Down(vel);
+            }
 
 
 

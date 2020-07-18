@@ -9,6 +9,7 @@ class Jardin: public QGraphicsItem
 {
     int w,h;
     int posx, posy;
+
     QPixmap *pixmap;
 
 

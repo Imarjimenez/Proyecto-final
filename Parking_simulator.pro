@@ -30,7 +30,6 @@ SOURCES += \
         login.cpp \
         main.cpp \
         mainwindow.cpp \
-        tiempo.cpp \
         velocimetro.cpp \
         vidas.cpp \
         volante.cpp
@@ -40,13 +39,13 @@ HEADERS += \
         jardin.h \
         login.h \
         mainwindow.h \
-        tiempo.h \
         velocimetro.h \
         vidas.h \
         volante.h
 
 FORMS += \
     mainwindow.ui
+
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
