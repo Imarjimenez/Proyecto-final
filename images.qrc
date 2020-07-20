@@ -1,10 +1,17 @@
 <RCC>
     <qresource prefix="/">
         <file>Photos/carro.png</file>
-        <file>Photos/menup.jpg</file>
         <file>Photos/Jardin.png</file>
         <file>Photos/Jardin2.png</file>
         <file>Photos/vidas.png</file>
         <file>Photos/fondo.jpg</file>
+        <file>Photos/carro1.png</file>
+        <file>Photos/carro2.png</file>
+        <file>Photos/carro3.png</file>
+        <file>Photos/carro4.png</file>
+        <file>Photos/boton.png</file>
+        <file>Photos/fondo2.jpg</file>
+        <file>Photos/menu.jpg</file>
+        <file>Photos/logo.png</file>
     </qresource>
 </RCC>

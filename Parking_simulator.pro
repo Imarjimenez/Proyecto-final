@@ -27,9 +27,11 @@ CONFIG += c++11
 SOURCES += \
         carro.cpp \
         jardin.cpp \
+        juego.cpp \
         login.cpp \
         main.cpp \
         mainwindow.cpp \
+        registro.cpp \
         velocimetro.cpp \
         vidas.cpp \
         volante.cpp
@@ -37,14 +39,19 @@ SOURCES += \
 HEADERS += \
         carro.h \
         jardin.h \
+        juego.h \
         login.h \
         mainwindow.h \
+        registro.h \
         velocimetro.h \
         vidas.h \
         volante.h
 
 FORMS += \
-    mainwindow.ui
+    juego.ui \
+    login.ui \
+    mainwindow.ui \
+    registro.ui
 
 
 # Default rules for deployment.

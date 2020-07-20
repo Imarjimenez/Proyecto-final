@@ -10,8 +10,9 @@ Carro::Carro(QObject *parent) : QObject(parent)
     pixmap = new QPixmap(":/Photos/carro.png");
 
 
-    posx=100;
-    posy=100;
+    posx=150;
+    posy=200;
+    setPos(150,200);
 
 
 
@@ -49,7 +50,7 @@ void Carro::Left()
 {
 
     angulo-=15;
-    setTransformOriginPoint(120,120);
+    setTransformOriginPoint(180,180);
 
     setRotation(angulo);
 
@@ -60,7 +61,7 @@ void Carro::Rigth()
 {
 
     angulo+=15;
-    setTransformOriginPoint(120,120);
+    setTransformOriginPoint(180,180);
 
     setRotation(angulo);
 

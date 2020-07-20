@@ -5,13 +5,10 @@
 #include <QGraphicsScene>
 #include <QTimer>
 #include <QFile>
-#include "carro.h"
-#include "jardin.h"
-#include "vidas.h"
-#include <QKeyEvent>
-#include <QImage>
+#include <login.h>
+#include <registro.h>
 #include <QMessageBox>
-#include <QLCDNumber>
+
 
 
 
@@ -27,31 +24,19 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
-public slots:
 
-    void activartiempo();
+
 private slots:
-    void niveles();
+    void on_pushButton_clicked();
 
+    void on_pushButton_2_clicked();
 
 private:
     Ui::MainWindow *ui;
-             //timer para los intervalos de tiempo entre cada frame
-    QGraphicsScene *scene;
-    Carro *personaje;//scene que muestra los objetos animados
-    QTimer *cronometro, *tiempo;
+    Registro *registro;
 
-    QList<Vidas *> vidas;
-    int contador=0;
+    QGraphicsScene *scene, *scene2;
 
-    float vel=1;
-
-    int nivel=0;
-
-    Jardin *numero1,*numero2,*numero3,*numero4;
-
-    void keyPressEvent(QKeyEvent *event);
-    QList<Vidas*> eliminar(QList<Vidas*>lista,int pos);
 };
 
 #endif // MAINWINDOW_H
