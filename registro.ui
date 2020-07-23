@@ -106,5 +106,38 @@
   </widget>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>pushButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>Contra</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>360</x>
+     <y>263</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>371</x>
+     <y>171</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>Usuario</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>409</x>
+     <y>274</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>393</x>
+     <y>97</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

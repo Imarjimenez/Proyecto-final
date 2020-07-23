@@ -2,9 +2,12 @@
 #define REGISTRO_H
 
 #include <QDialog>
+#include <juego.h>
 #include <QGraphicsScene>
 #include <QFile>
 #include <QTextStream>
+#include <QString>
+#include <QMessageBox>
 
 namespace Ui {
 class Registro;
@@ -24,6 +27,12 @@ private slots:
 private:
     Ui::Registro *ui;
     QGraphicsScene *scene;
+    QString nivel;
+    Juego *juego;
+    bool registro=false;
+
+    QString usu_archivo;
+
 };
 
 #endif // REGISTRO_H

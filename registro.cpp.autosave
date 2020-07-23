@@ -51,6 +51,8 @@ void Registro::on_pushButton_clicked()
 
         escribir<<usuario<<"  "<<contra<<"  "<<nivel<<endl;
         hide();
+        juego= new Juego(this);
+        juego->show();
     }
 
 
