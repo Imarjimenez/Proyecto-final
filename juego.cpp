@@ -2,35 +2,23 @@
 #include "ui_juego.h"
 
 
-Juego::Juego(QWidget *parent)
-    : QMainWindow(parent)
+Juego::Juego(QWidget *parent,const QString usuario,const QString contra, QString nivel)
+    : QMainWindow(parent), usuario(usuario), contra(contra), nivel(nivel)
     , ui(new Ui::Juego)
 {
     ui->setupUi(this);
     scene = new QGraphicsScene;
-    ui->graphicsView1->setScene(scene);
-
-    scene->setSceneRect(0,0,800,600);
-    scene->setBackgroundBrush(QPixmap(":/Photos/menup.jpg"));
-
 
 
     QTimer *cronometro= new QTimer(this);
     connect(cronometro,SIGNAL(timeout()),this,SLOT(activartiempo()));
     cronometro->start(1000);
 
-    QTimer *tiempo= new QTimer(this);
-    connect(tiempo,SIGNAL(timeout()),this,SLOT(actualizar()));
-    tiempo->start(1000);
-    personaje = new Carro();
+    usuario1=usuario;
+    contra1=contra;
+    nivel1=nivel;
 
-
-  scene->addItem(personaje);
-
-
-
-
-
+    ingresarnivel();
 
 
 
@@ -52,19 +40,14 @@ void Juego::activartiempo()
     if(contador>180) contador=0;
 }
 
-void Juego::niveles()
+void Juego::ingresarnivel()
 {
-    if(nivel == 0){
-            scene->setSceneRect(0,0,978,600);     //asigna el rectangulo que encierra la scene, determinado por h_limit y v_limit
-            ui->graphicsView1->setScene(scene);
-            scene->setBackgroundBrush(QPixmap(":/Photos/menup.png"));
 
-        }
-        if(nivel == 1){ // menu
-            scene->setSceneRect(0,0,978,600);     //asigna el rectangulo que encierra la scene
+        if(nivel == "1"){ // menu
+            scene->setSceneRect(0,0,800,600);     //asigna el rectangulo que encierra la scene
             ui->graphicsView1->setScene(scene);
             scene->addRect(scene->sceneRect());
-            scene->setBackgroundBrush(QPixmap(":/Photos/fondo.jpg"));
+            scene->setBackgroundBrush(QPixmap(":/Photos/asfalto.jpg"));
 
             obstaculos.push_back(new Jardin(1,67,207,-10,320));scene->addItem(obstaculos.back());//verticales
             obstaculos.push_back(new Jardin(1,67,207,-10,470));scene->addItem(obstaculos.back());
@@ -74,7 +57,7 @@ void Juego::niveles()
             obstaculos.push_back(new Jardin(1,67,207,770,120));scene->addItem(obstaculos.back());
             obstaculos.push_back(new Jardin(1,67,207,770,300));scene->addItem(obstaculos.back());
             obstaculos.push_back(new Jardin(1,67,207,770,480));scene->addItem(obstaculos.back());
-            obstaculos.push_back(new Jardin(2,211,57,10,-30));scene->addItem(obstaculos.back());//horrizontales
+            obstaculos.push_back(new Jardin(2,211,57,10,-30));scene->addItem(obstaculos.back());//horizontales
             obstaculos.push_back(new Jardin(2,211,57,207,-30));scene->addItem(obstaculos.back());
             obstaculos.push_back(new Jardin(2,211,57,414,-30));scene->addItem(obstaculos.back());
             obstaculos.push_back(new Jardin(2,211,57,621,-30));scene->addItem(obstaculos.back());
@@ -82,26 +65,26 @@ void Juego::niveles()
 
 
         }
-        if(nivel == 2){
-            scene->setSceneRect(0,0,978,600);     //asigna el rectangulo que encierra la scene
+        if(nivel == "2"){
+            scene->setSceneRect(0,0,800,600);     //asigna el rectangulo que encierra la scene
             ui->graphicsView1->setScene(scene);
             scene->addRect(scene->sceneRect());
-            scene->setBackgroundBrush(QPixmap(":/Photos/fondo.jpg"));
+            scene->setBackgroundBrush(QPixmap(":/Photos/asfalto.jpg"));
 
         }
-        if(nivel == 3){
-            scene->setSceneRect(0,0,978,600);     //asigna el rectangulo que encierra la scene, determinado por h_limit y v_limit
+        if(nivel == "3"){
+            scene->setSceneRect(0,0,800,600);     //asigna el rectangulo que encierra la scene, determinado por h_limit y v_limit
             ui->graphicsView1->setScene(scene);
             scene->addRect(scene->sceneRect());
-            scene->setBackgroundBrush(QPixmap(":/Photos/fondo.jpg"));
+            scene->setBackgroundBrush(QPixmap(":/Photos/asfalto.jpg"));
 
         }
-        if(nivel==4){
-            scene->setSceneRect(0,0,978,600);     //asigna el rectangulo que encierra la scene
+        if(nivel=="4"){
+            scene->setSceneRect(0,0,800,600);     //asigna el rectangulo que encierra la scene
             ui->graphicsView1->setScene(scene);
 
             scene->addRect(scene->sceneRect());
-            scene->setBackgroundBrush(QPixmap(":/Photos/fondo.jpg"));
+            scene->setBackgroundBrush(QPixmap(":/Photos/asfalto.jpg"));
 
         }
 

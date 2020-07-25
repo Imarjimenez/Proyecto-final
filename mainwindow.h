@@ -34,6 +34,7 @@ private slots:
 private:
     Ui::MainWindow *ui;
     Registro *registro;
+    Login *login;
 
     QGraphicsScene *scene, *scene2;
 

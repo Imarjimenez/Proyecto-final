@@ -1,3 +1,4 @@
+
 #ifndef REGISTRO_H
 #define REGISTRO_H
 
@@ -5,6 +6,8 @@
 #include <juego.h>
 #include <QGraphicsScene>
 #include <QFile>
+#include <QList>
+#include <QMap>
 #include <QTextStream>
 #include <QString>
 #include <QMessageBox>
@@ -24,12 +27,14 @@ public:
 private slots:
     void on_pushButton_clicked();
 
+
 private:
     Ui::Registro *ui;
     QGraphicsScene *scene;
-    QString nivel;
+
     Juego *juego;
-    bool registro=false;
+    int ban=1;
+
 
     QString usu_archivo;
 

@@ -5,6 +5,7 @@
 #include <QGraphicsScene>
 #include <QTimer>
 #include <QFile>
+#include <QTextStream>
 #include "carro.h"
 #include "jardin.h"
 #include "vidas.h"
@@ -24,19 +25,28 @@ class Juego : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit Juego(QWidget *parent = 0);
+    explicit Juego( QWidget *parent = 0);
+    Juego(QWidget *parent=0,const QString usuario="",const QString contra="",const QString nivel="");
+
     ~Juego();
+    QString usuario;
+    QString contra;
+    QString nivel;
+    QString usuario1;
+    QString contra1;
+    QString nivel1;
+
 
 public slots:
 
     void activartiempo();
-private slots:
-    void niveles();
+
 
 
 private:
     Ui::Juego *ui;
-             //timer para los intervalos de tiempo entre cada frame
+
+
     QGraphicsScene *scene;
     Carro *personaje;//scene que muestra los objetos animados
     QTimer *cronometro, *tiempo;
@@ -47,9 +57,8 @@ private:
 
     float vel=1;
 
-    int nivel=0;
 
-
+    void ingresarnivel();
     void keyPressEvent(QKeyEvent *event);
     QList<Vidas*> eliminar(QList<Vidas*>lista,int pos);
 };
