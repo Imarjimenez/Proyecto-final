@@ -14,5 +14,8 @@
         <file>Photos/menu.jpg</file>
         <file>Photos/logo.png</file>
         <file>Photos/asfalto.jpg</file>
+        <file>Photos/volante.png</file>
+        <file>Photos/velocimetro.png</file>
+        <file>Photos/aguja.png</file>
     </qresource>
 </RCC>

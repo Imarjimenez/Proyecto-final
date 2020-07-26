@@ -9,6 +9,8 @@
 #include "carro.h"
 #include "jardin.h"
 #include "vidas.h"
+#include "volante.h"
+#include "velocimetro.h"
 #include <QKeyEvent>
 #include <QImage>
 #include <QMessageBox>
@@ -49,8 +51,9 @@ private:
 
     QGraphicsScene *scene;
     Carro *personaje;//scene que muestra los objetos animados
-    QTimer *cronometro, *tiempo;
-
+    QTimer *cronometro;
+    Volante *volante;
+    Velocimetro *velocimetro, *aguja;
     QList<Vidas *> vidas;
     QList<Jardin *> obstaculos;
     int contador=0;
