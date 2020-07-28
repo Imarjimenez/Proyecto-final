@@ -7,7 +7,7 @@ Vidas::Vidas(int x,int y)
 
 
     pixmap = new QPixmap(":/Photos/vidas.png");
-    //pixmap->scaled(131,31,Qt::KeepAspectRatio);
+
 
 
     posx=x;
@@ -54,6 +54,8 @@ void Vidas::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWi
 
 
 }
+
+
 
 
 

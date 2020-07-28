@@ -75,3 +75,4 @@ void Registro::on_pushButton_clicked()
 
 
 
+

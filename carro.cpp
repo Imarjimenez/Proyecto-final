@@ -10,9 +10,9 @@ Carro::Carro(QObject *parent) : QObject(parent)
     pixmap = new QPixmap(":/Photos/carro.png");
 
 
-    posx=150;
-    posy=200;
-    setPos(150,200);
+    posx=160;
+    posy=240;
+    setPos(160,240);
 
 
 

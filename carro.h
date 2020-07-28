@@ -9,6 +9,8 @@
 #include <QTimer>
 #include <math.h>
 #include <QtGui>
+#include "volante.h"
+#include "velocimetro.h"
 
 
 

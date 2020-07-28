@@ -14,7 +14,7 @@
 #include <QKeyEvent>
 #include <QImage>
 #include <QMessageBox>
-#include <QLCDNumber>
+
 
 
 
@@ -38,12 +38,17 @@ public:
     QString contra1;
     QString nivel1;
 
+    void ingresarnivel();
+
 
 public slots:
 
     void activartiempo();
 
 
+
+private slots:
+    void on_pushButton_clicked();
 
 private:
     Ui::Juego *ui;
@@ -56,14 +61,15 @@ private:
     Velocimetro *velocimetro, *aguja;
     QList<Vidas *> vidas;
     QList<Jardin *> obstaculos;
-    int contador=0;
 
+
+    int contador=0;
+    bool ban=true;
     float vel=1;
 
 
-    void ingresarnivel();
     void keyPressEvent(QKeyEvent *event);
-    QList<Vidas*> eliminar(QList<Vidas*>lista,int pos);
+
 };
 
 #endif // JUEGO_H
