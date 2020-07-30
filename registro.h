@@ -12,6 +12,7 @@
 #include <QString>
 #include <QMessageBox>
 
+
 namespace Ui {
 class Registro;
 }

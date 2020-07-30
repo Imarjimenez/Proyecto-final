@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>826</width>
-    <height>627</height>
+    <height>636</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,15 +20,21 @@
       <x>0</x>
       <y>0</y>
       <width>831</width>
-      <height>591</height>
+      <height>611</height>
      </rect>
+    </property>
+    <property name="baseSize">
+     <size>
+      <width>810</width>
+      <height>600</height>
+     </size>
     </property>
    </widget>
    <widget class="QLCDNumber" name="lcdNumber">
     <property name="geometry">
      <rect>
-      <x>690</x>
-      <y>30</y>
+      <x>730</x>
+      <y>10</y>
       <width>71</width>
       <height>41</height>
      </rect>
@@ -37,8 +43,8 @@
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>720</x>
-      <y>80</y>
+      <x>760</x>
+      <y>60</y>
       <width>41</width>
       <height>41</height>
      </rect>
@@ -54,6 +60,29 @@
      <size>
       <width>40</width>
       <height>40</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_2">
+    <property name="geometry">
+     <rect>
+      <x>760</x>
+      <y>110</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/Photos/mul.png</normaloff>:/Photos/mul.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>60</width>
+      <height>60</height>
      </size>
     </property>
    </widget>

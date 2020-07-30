@@ -19,14 +19,15 @@ public:
 
     float ancho;
     float alto;
+    int angulo;
     int getPosx();
     void setPosx(int px);
     int getPosy();
     void setPosy(int py);
     QRectF boundingRect() const;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
-
-
+    void rotar_right();
+    void rotar_left();
 
 
 };

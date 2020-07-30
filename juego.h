@@ -14,6 +14,7 @@
 #include <QKeyEvent>
 #include <QImage>
 #include <QMessageBox>
+#include <QInputDialog>
 
 
 
@@ -50,6 +51,8 @@ public slots:
 private slots:
     void on_pushButton_clicked();
 
+    void on_pushButton_2_clicked();
+
 private:
     Ui::Juego *ui;
 
@@ -61,6 +64,7 @@ private:
     Velocimetro *velocimetro, *aguja;
     QList<Vidas *> vidas;
     QList<Jardin *> obstaculos;
+    Juego *juego;
 
 
     int contador=0;

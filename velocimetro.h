@@ -26,7 +26,7 @@ public:
     void setPosy(int py);
     QRectF boundingRect() const;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget = nullptr);
-
+    void rotar();
 };
 
 #endif // VELOCIMETRO_H

@@ -12,8 +12,9 @@ Volante::Volante(int x,int y)
 
     posx=x;
     posy=y;
+    setPos(x,y);
 
-
+    angulo=0;
 
     //dimensiones de c/U de las imagenes
     ancho =150;
@@ -48,13 +49,29 @@ void Volante::setPosy(int py)
 
 QRectF Volante::boundingRect() const
 {
-    return QRectF(posx,posy,ancho,alto);
+    return QRectF(-75,-62,ancho,alto);
 }
 
 void Volante::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
-    painter->drawPixmap(posx,posy,*pixmap);
+    painter->drawPixmap(-75,-62,*pixmap);
 
 
+
+}
+
+void Volante::rotar_right()
+{
+    if(angulo<=90){
+    angulo+=30;
+    setRotation(angulo);}
+
+
+}
+void Volante::rotar_left(){
+    if(angulo>=-90){
+    angulo-=30;}
+
+    setRotation(angulo);
 
 }

@@ -14,6 +14,9 @@ Velocimetro::Velocimetro(int i,int w_, int h_, int x, int y)
     h = h_;
     posx = x;
     posy = y;
+    setPos(x,y);
+    if(i==2){
+    setRotation(-90);}
 
 }
 
@@ -59,10 +62,10 @@ void Velocimetro::setPosy(int py)
 
 QRectF Velocimetro::boundingRect() const
 {
-    return QRectF(posx,posy,w,h);
+    return QRectF(-100,-65,w,h);
 }
 
 void Velocimetro::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
-    painter->drawPixmap(posx,posy,*pixmap);
+    painter->drawPixmap(-100,-65,*pixmap);
 }

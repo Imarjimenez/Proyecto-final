@@ -18,5 +18,6 @@
         <file>Photos/velocimetro.png</file>
         <file>Photos/aguja.png</file>
         <file>Photos/save.jpg</file>
+        <file>Photos/mul.png</file>
     </qresource>
 </RCC>

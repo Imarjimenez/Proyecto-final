@@ -27,20 +27,33 @@ public:
     QPixmap *pixmap;
 
     float posx, posy;
+    float vel;
     float ancho;
     float alto;
-    int angulo=0;
+    int angulo;
+    float t;
+    float dx;
+    float dy;
+    float hipotenusa;
+    float alp;
+
+
+
     int getPosx();
     void setPosx(int px);
     int getPosy();
     void setPosy(int py);
     QRectF boundingRect() const;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
-    void Up(float velocidad);
-    void Down(float velocidad);
+    void Up();
+    void Down();
     void Left();
     void Rigth();
-    Carro *carro;
+public slots:
+
+    void tiempo();
+private:
+    QTimer *mover;
 
 
 };

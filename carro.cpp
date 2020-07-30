@@ -8,11 +8,20 @@ Carro::Carro(QObject *parent) : QObject(parent)
     ancho=100;
     alto=117;
     pixmap = new QPixmap(":/Photos/carro.png");
+    posx=400;
+    posy=540;
+    setPos(posx,posy);
 
+    vel=0;
+    dx=0;
+    dy=0;
+    hipotenusa=sqrt(ancho*ancho+alto*alto);
+    alp=atan(ancho/alto);
+    angulo=0;
 
-    posx=160;
-    posy=240;
-    setPos(160,240);
+    QTimer *mover= new QTimer(this);
+    connect(mover,SIGNAL(timeout()),this,SLOT(tiempo()));
+    mover->start(20);
 
 
 
@@ -22,37 +31,49 @@ Carro::Carro(QObject *parent) : QObject(parent)
 
 QRectF Carro::boundingRect() const
 {
-    return QRectF(posx,posy,ancho,alto);
+
+    return QRectF(-50,-58,100,117);
+
 }
 
 void Carro::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
-    painter->drawPixmap(posx,posy,*pixmap);
-}
-
-void Carro::Up(float vel)
-{
-    if(vel<=20) vel+=5;
-    posy -= vel;
-    setPos(posx,posy);
-
+    painter->drawPixmap(-50,-58,*pixmap);
 
 }
 
-void Carro::Down(float vel)
+void Carro::Up()
 {
-    if(vel> 20) vel+=5;
-    posy += vel;
-    setPos(posx,posy);
+    if(vel<=5) vel++;
+//    posy -= vel;
+//    setPos(posx,posy);
+
+
+}
+
+void Carro::Down()
+{
+    if(vel>-5) vel--;
+//    posy += vel;
+//    setPos(posx,posy);
 }
 
 void Carro::Left()
 {
 
-    angulo-=15;
-    setTransformOriginPoint(180,180);
+//    angulo-=15;
 
-    setRotation(angulo);
+
+//    setRotation(angulo);
+//    posx+=vel;
+//    dx=hipotenusa*sin(angulo*3.141592/180+3.141592-alp);
+//    dy= hipotenusa*cos(angulo*3.141592/180+3.141592-alp);
+    angulo--;
+//    posx+= sin(angulo)*vel;
+//    posy-= cos(angulo)*vel;
+    setTransformOriginPoint(50,58);
+      this->setRotation(angulo);
+//    setPos(posx,posy);
 
 
 }
@@ -60,11 +81,31 @@ void Carro::Left()
 void Carro::Rigth()
 {
 
-    angulo+=15;
-    setTransformOriginPoint(180,180);
 
+//    dx=hipotenusa*sin(angulo*3.141592/180+3.141592-alp);
+//    dy= hipotenusa*cos(angulo*3.141592/180+3.141592-alp);
+    angulo ++;
+//    posx+= sin(angulo)*vel;
+    setTransformOriginPoint(50,58);
+//    posy-= cos(angulo)*vel;
     setRotation(angulo);
 
+
+
+}
+
+void Carro::tiempo()
+{
+
+    posy-= cos(angulo*3.141592/180)*vel;
+    if(vel>=0){
+        posx+= sin(angulo*3.141592/180)*vel;
+    }
+    else{
+        posx-=sin(angulo*3.141592/180)*vel;
+    }
+    setPos(posx,posy);
+    t++;
 
 
 }
