@@ -12,52 +12,13 @@ Jardin::Jardin(int i,int w_, int h_, int x, int y)
     if (i==3)pixmap = new QPixmap(":/Photos/carro1.png");
     if (i==4)pixmap = new QPixmap(":/Photos/carro2.png");
     if (i==5)pixmap = new QPixmap(":/Photos/carro3.png");
-    if (i==6)pixmap = new QPixmap(":/Photos/carro4.png");
+    if (i==6)pixmap = new QPixmap(":/Photos/carro4.png");    
+    if (i==7)pixmap = new QPixmap(":/Photos/carreras.png");
     w = w_;
     h = h_;
     posx = x;
     posy = y;
 
-}
-
-int Jardin::getW()
-{
-    return w;
-}
-
-int Jardin::getH()
-{
-    return h;
-}
-
-void Jardin::setW(int ancho)
-{
-    w = ancho;
-}
-
-void Jardin::setH(int altura)
-{
-    h = altura;
-}
-
-int Jardin::getPosx()
-{
-    return posx;
-}
-
-void Jardin::setPosx(int px)
-{
-    posx=px;
-}
-
-int Jardin::getPosy()
-{
-    return posy;
-}
-
-void Jardin::setPosy(int py)
-{
-    posy = py;
 }
 
 QRectF Jardin::boundingRect() const

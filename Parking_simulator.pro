@@ -4,7 +4,8 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui \
+         multimedia
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -28,6 +29,7 @@ SOURCES += \
         carro.cpp \
         jardin.cpp \
         juego.cpp \
+        lineas.cpp \
         login.cpp \
         main.cpp \
         mainwindow.cpp \
@@ -40,6 +42,7 @@ HEADERS += \
         carro.h \
         jardin.h \
         juego.h \
+        lineas.h \
         login.h \
         mainwindow.h \
         registro.h \

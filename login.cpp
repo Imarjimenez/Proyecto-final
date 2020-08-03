@@ -11,6 +11,7 @@ Login::Login(QWidget *parent) :
 
     scene->setSceneRect(0,0,626,382);
     scene->setBackgroundBrush(QPixmap(":/Photos/fondo2.jpg"));
+
 }
 
 Login::~Login()

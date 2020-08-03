@@ -28,7 +28,7 @@ public:
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
     void rotar_right();
     void rotar_left();
-
+    void soltar();
 
 };
 

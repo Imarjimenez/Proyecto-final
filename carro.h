@@ -9,12 +9,6 @@
 #include <QTimer>
 #include <math.h>
 #include <QtGui>
-#include "volante.h"
-#include "velocimetro.h"
-
-
-
-
 #include <QRectF>
 
 class Carro : public QObject, public QGraphicsItem
@@ -30,30 +24,35 @@ public:
     float vel;
     float ancho;
     float alto;
-    int angulo;
-    float t;
-    float dx;
-    float dy;
-    float hipotenusa;
-    float alp;
-
-
-
+    float angulo;
+    float des;
+    float acc;
+    float maxspeed;
+    float turnspeed;
+    bool up;
+    bool down;
     int getPosx();
     void setPosx(int px);
     int getPosy();
     void setPosy(int py);
+    int getVel();
+    void setVel(int v);
+
     QRectF boundingRect() const;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
     void Up();
     void Down();
+    void noUp();
+    void noDown();
     void Left();
     void Rigth();
+    void perder();
 public slots:
-
+    void frenar();
     void tiempo();
 private:
     QTimer *mover;
+    QTimer *check_break;
 
 
 };

@@ -20,45 +20,6 @@ Velocimetro::Velocimetro(int i,int w_, int h_, int x, int y)
 
 }
 
-int Velocimetro::getW()
-{
-    return w;
-}
-
-int Velocimetro::getH()
-{
-    return h;
-}
-
-void Velocimetro::setW(int ancho)
-{
-    w = ancho;
-}
-
-void Velocimetro::setH(int altura)
-{
-    h = altura;
-}
-
-int Velocimetro::getPosx()
-{
-    return posx;
-}
-
-void Velocimetro::setPosx(int px)
-{
-    posx=px;
-}
-
-int Velocimetro::getPosy()
-{
-    return posy;
-}
-
-void Velocimetro::setPosy(int py)
-{
-    posy = py;
-}
 
 QRectF Velocimetro::boundingRect() const
 {

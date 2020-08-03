@@ -11,13 +11,12 @@
 #include "vidas.h"
 #include "volante.h"
 #include "velocimetro.h"
+#include "lineas.h"
 #include <QKeyEvent>
 #include <QImage>
 #include <QMessageBox>
 #include <QInputDialog>
-
-
-
+#include <QMediaPlayer>
 
 namespace Ui {
 class Juego;
@@ -38,25 +37,20 @@ public:
     QString usuario1;
     QString contra1;
     QString nivel1;
-
     void ingresarnivel();
 
-
 public slots:
-
     void activartiempo();
-
-
 
 private slots:
     void on_pushButton_clicked();
 
     void on_pushButton_2_clicked();
 
+    void on_pushButton_3_clicked();
+
 private:
     Ui::Juego *ui;
-
-
     QGraphicsScene *scene;
     Carro *personaje;//scene que muestra los objetos animados
     QTimer *cronometro;
@@ -64,15 +58,14 @@ private:
     Velocimetro *velocimetro, *aguja;
     QList<Vidas *> vidas;
     QList<Jardin *> obstaculos;
+    Lineas *l1,*l2,*l3,*l4,*l5,*l6;
+    Jardin *carrera;
     Juego *juego;
-
-
     int contador=0;
-    bool ban=true;
+    bool ban;
     float vel=1;
-
-
     void keyPressEvent(QKeyEvent *event);
+    void keyReleaseEvent(QKeyEvent *event);
 
 };
 

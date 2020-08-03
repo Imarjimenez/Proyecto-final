@@ -1,5 +1,6 @@
 #include "registro.h"
 #include "ui_registro.h"
+#include <QApplication>
 
 Registro::Registro(QWidget *parent) :
     QDialog(parent),
@@ -11,6 +12,7 @@ Registro::Registro(QWidget *parent) :
 
     scene->setSceneRect(0,0,626,382);
     scene->setBackgroundBrush(QPixmap(":/Photos/fondo2.jpg"));
+
 
 
 
@@ -55,6 +57,7 @@ void Registro::on_pushButton_clicked()
 
 
                 juego= new Juego(this, usuario, contra, nivel);
+                //juego.setWindowFlags(Qt::WindowCloseButtonHint);
                 juego->show();
 
             }

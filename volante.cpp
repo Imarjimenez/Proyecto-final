@@ -75,3 +75,9 @@ void Volante::rotar_left(){
     setRotation(angulo);
 
 }
+
+void Volante::soltar()
+{
+    angulo=0;
+    setRotation(angulo);
+}

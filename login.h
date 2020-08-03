@@ -6,9 +6,8 @@
 #include <QGraphicsScene>
 #include <QFile>
 #include <QTextStream>
-#include <QMap>
-
 #include <QMessageBox>
+
 
 namespace Ui {
 
@@ -38,13 +37,6 @@ private:
     QString nivel;
     Juego *juego;
     int ban=1;
-
-
-
-
-
-
-
 
 
 };
