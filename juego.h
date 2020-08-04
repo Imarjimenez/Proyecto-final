@@ -28,7 +28,7 @@ class Juego : public QMainWindow
 
 public:
     explicit Juego( QWidget *parent = 0);
-    Juego(QWidget *parent=0,const QString usuario="",const QString contra="",const QString nivel="");
+    Juego(QWidget *parent=0,const QString usuario="",const QString contra="",const QString nivel="", const QString modo="");
 
     ~Juego();
     QString usuario;
@@ -37,7 +37,10 @@ public:
     QString usuario1;
     QString contra1;
     QString nivel1;
-    void ingresarnivel();
+    QString modo;
+    QString contador1;
+
+    void ingresarnivel(QString nivel1);
 
 public slots:
     void activartiempo();
@@ -47,12 +50,12 @@ private slots:
 
     void on_pushButton_2_clicked();
 
-    void on_pushButton_3_clicked();
+
 
 private:
     Ui::Juego *ui;
     QGraphicsScene *scene;
-    Carro *personaje;//scene que muestra los objetos animados
+    Carro *personaje;
     QTimer *cronometro;
     Volante *volante;
     Velocimetro *velocimetro, *aguja;
@@ -61,8 +64,10 @@ private:
     Lineas *l1,*l2,*l3,*l4,*l5,*l6;
     Jardin *carrera;
     Juego *juego;
-    int contador=0;
+    QMediaPlayer *music;
+    int contador,t1,t2;
     bool ban;
+    int ban2;
     float vel=1;
     void keyPressEvent(QKeyEvent *event);
     void keyReleaseEvent(QKeyEvent *event);

@@ -77,6 +77,7 @@ void Carro::perder()
     posy=510;
     vel=0;
     setPos(posx,posy);
+    this->setRotation(0);
 }
 
 void Carro::frenar()
@@ -126,7 +127,14 @@ void Carro::setVel(int v)
     vel = v;
 }
 
+float Carro::getAngulo()
+{
+    return angulo;
+}
 
+void Carro::setAngulo(int a){
+    angulo = a;
+}
 
 
 

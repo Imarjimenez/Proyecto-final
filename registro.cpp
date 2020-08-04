@@ -56,7 +56,7 @@ void Registro::on_pushButton_clicked()
                 escribir<<usuario<<"  "<<contra<<"  "<<nivel<<endl;
 
 
-                juego= new Juego(this, usuario, contra, nivel);
+                juego= new Juego(this, usuario, contra, nivel,"1");
                 //juego.setWindowFlags(Qt::WindowCloseButtonHint);
                 juego->show();
 

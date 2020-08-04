@@ -43,7 +43,7 @@ void Login::on_pushButton_2_clicked()
                 if(contra==contra_archivo){
                     ban=0;
                     hide();
-                    juego= new Juego(this,usu_archivo,contra_archivo, niv_archivo);
+                    juego= new Juego(this,usu_archivo,contra_archivo, niv_archivo,"1");
                     juego->show();
 
                 }

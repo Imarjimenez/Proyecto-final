@@ -10,6 +10,7 @@ class Velocimetro: public QGraphicsItem
 {
     int w,h;
     int posx, posy;
+    float angulo;
 
     QPixmap *pixmap;
 
@@ -19,7 +20,9 @@ public:
     Velocimetro();
     QRectF boundingRect() const;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget = nullptr);
-    void rotar();
+    void acelerar();
+    void retroceder();
+    void mitad();
 };
 
 #endif // VELOCIMETRO_H

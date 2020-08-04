@@ -37,6 +37,8 @@ public:
     void setPosy(int py);
     int getVel();
     void setVel(int v);
+    float getAngulo();
+    void setAngulo(int a);
 
     QRectF boundingRect() const;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
