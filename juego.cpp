@@ -219,8 +219,29 @@ void Juego::keyPressEvent(QKeyEvent *event)
                     juego= new Juego(this,usuario,contra, nivel1,"1");
                     juego->show();}
                     else if(modo=="2"){
+                        music->stop();
+                        QFile file("C:/Users/user/Documents/Parking_simulator/Registro/multijugador.txt");
+                         QFile file2("C:/Users/user/Documents/Parking_simulator/Registro/multijugador.txt");
+                        file.open(QIODevice::ReadOnly | QIODevice::Text);
+                        file2.open(QIODevice::WriteOnly);
+                        QTextStream escribir(&file2);
 
-                    }
+                        QTextStream datosArchivo(&file);
+                            while(!datosArchivo.atEnd()){
+                                datosArchivo>>contador1;
+                                if(contador1<=contador){
+                                escribir<<contador;
+                                QMessageBox::information(this,"NO LO SUPERASTE","No superaste el mejor tiempo");}
+
+                            }
+                            file.close();
+                            file2.close();
+                            hide();
+                            MainWindow *menu= new MainWindow;
+                            menu->show();
+
+
+                                }
                 }
             }else if (event->key() == Qt::Key_A){
                 personaje->Left();
@@ -247,9 +268,30 @@ void Juego::keyPressEvent(QKeyEvent *event)
                         juego= new Juego(this,usuario,contra, nivel1,"1");
                         juego->show();
                     }
-                    else if (modo=="2") {
+                    else if(modo=="2"){
+                        music->stop();
+                        QFile file("C:/Users/user/Documents/Parking_simulator/Registro/multijugador.txt");
+                         QFile file2("C:/Users/user/Documents/Parking_simulator/Registro/multijugador.txt");
+                        file.open(QIODevice::ReadOnly | QIODevice::Text);
+                        file2.open(QIODevice::WriteOnly);
+                        QTextStream escribir(&file2);
 
-                    }
+                        QTextStream datosArchivo(&file);
+                            while(!datosArchivo.atEnd()){
+                                datosArchivo>>contador1;
+                                if(contador1<=contador){
+                                escribir<<contador;
+                                QMessageBox::information(this,"NO LO SUPERASTE","No superaste el mejor tiempo");}
+
+                            }
+                            hide();
+                            file.close();
+                            file2.close();
+                            MainWindow *menu= new MainWindow;
+                            menu->show();
+
+
+                                }
                 }
             }else if (event->key() == Qt::Key_W){
                 personaje->Up();
@@ -278,9 +320,30 @@ void Juego::keyPressEvent(QKeyEvent *event)
                     juego= new Juego(this,usuario,contra, nivel1,"1");
                     juego->show();
                     }
-                    else if (modo=="2") {
+                    else if(modo=="2"){
+                        music->stop();
+                        QFile file("C:/Users/user/Documents/Parking_simulator/Registro/multijugador.txt");
+                         QFile file2("C:/Users/user/Documents/Parking_simulator/Registro/multijugador.txt");
+                        file.open(QIODevice::ReadOnly | QIODevice::Text);
+                        file2.open(QIODevice::WriteOnly);
+                        QTextStream escribir(&file2);
 
-                    }
+                        QTextStream datosArchivo(&file);
+                            while(!datosArchivo.atEnd()){
+                                datosArchivo>>contador1;
+                                if(contador1<=contador){
+                                escribir<<contador;
+                                QMessageBox::information(this,"NO LO SUPERASTE","No superaste el mejor tiempo");}
+
+                            }
+                            file.close();
+                            file2.close();
+                            hide();
+                            MainWindow *menu= new MainWindow;
+                            menu->show();
+
+
+                                }
                 }
             }else if (event->key() == Qt::Key_S){
 
@@ -309,7 +372,7 @@ void Juego::keyPressEvent(QKeyEvent *event)
                             juego->show();
                         }
                         else if(modo=="2"){
-
+                            music->stop();
                             QFile file("C:/Users/user/Documents/Parking_simulator/Registro/multijugador.txt");
                              QFile file2("C:/Users/user/Documents/Parking_simulator/Registro/multijugador.txt");
                             file.open(QIODevice::ReadOnly | QIODevice::Text);
@@ -326,6 +389,7 @@ void Juego::keyPressEvent(QKeyEvent *event)
                                 }
                                 file.close();
                                 file2.close();
+                                hide();
                                 MainWindow *menu= new MainWindow;
                                 menu->show();
 
@@ -366,7 +430,7 @@ void Juego::keyPressEvent(QKeyEvent *event)
                         juego= new Juego(this,usuario,contra, nivel1);
                         juego->show();}
                     else if(modo=="2"){
-
+                        music->stop();
                         QFile file("C:/Users/user/Documents/Parking_simulator/Registro/multijugador.txt");
                          QFile file2("C:/Users/user/Documents/Parking_simulator/Registro/multijugador.txt");
                         file.open(QIODevice::ReadOnly | QIODevice::Text);
@@ -383,6 +447,8 @@ void Juego::keyPressEvent(QKeyEvent *event)
                             }
                             file.close();
                             file2.close();
+
+                            hide();
                             MainWindow *menu= new MainWindow;
                             menu->show();
 
@@ -415,7 +481,7 @@ void Juego::keyPressEvent(QKeyEvent *event)
                     juego= new Juego(this,usuario,contra, nivel1);
                     juego->show();}
                     else if(modo=="2"){
-
+                        music->stop();
                         QFile file("C:/Users/user/Documents/Parking_simulator/Registro/multijugador.txt");
                          QFile file2("C:/Users/user/Documents/Parking_simulator/Registro/multijugador.txt");
                         file.open(QIODevice::ReadOnly | QIODevice::Text);
@@ -432,6 +498,7 @@ void Juego::keyPressEvent(QKeyEvent *event)
                             }
                             file.close();
                             file2.close();
+                            hide();
                             MainWindow *menu= new MainWindow;
                             menu->show();
 
@@ -466,7 +533,7 @@ void Juego::keyPressEvent(QKeyEvent *event)
                     juego= new Juego(this,usuario,contra, nivel1);
                     juego->show();}
                     else if(modo=="2"){
-
+                        music->stop();
                         QFile file("C:/Users/user/Documents/Parking_simulator/Registro/multijugador.txt");
                          QFile file2("C:/Users/user/Documents/Parking_simulator/Registro/multijugador.txt");
                         file.open(QIODevice::ReadOnly | QIODevice::Text);
@@ -483,6 +550,7 @@ void Juego::keyPressEvent(QKeyEvent *event)
                             }
                             file.close();
                             file2.close();
+                            hide();
                             MainWindow *menu= new MainWindow;
                             menu->show();
 
@@ -517,7 +585,7 @@ void Juego::keyPressEvent(QKeyEvent *event)
                         juego= new Juego(this,usuario,contra, nivel1);
                         juego->show();}
                         else if(modo=="2"){
-
+                            music->stop();
                             QFile file("C:/Users/user/Documents/Parking_simulator/Registro/multijugador.txt");
                              QFile file2("C:/Users/user/Documents/Parking_simulator/Registro/multijugador.txt");
                             file.open(QIODevice::ReadOnly | QIODevice::Text);
@@ -534,6 +602,7 @@ void Juego::keyPressEvent(QKeyEvent *event)
                                 }
                                 file.close();
                                 file2.close();
+                                hide();
                                 MainWindow *menu= new MainWindow;
                                 menu->show();
 
@@ -592,7 +661,7 @@ void Juego::keyPressEvent(QKeyEvent *event)
 
                     }
                     else if(modo=="2"){
-
+                        music->stop();
                         QFile file("C:/Users/user/Documents/Parking_simulator/Registro/multijugador.txt");
                          QFile file2("C:/Users/user/Documents/Parking_simulator/Registro/multijugador.txt");
                         file.open(QIODevice::ReadOnly | QIODevice::Text);
@@ -609,6 +678,7 @@ void Juego::keyPressEvent(QKeyEvent *event)
                             }
                             file.close();
                             file2.close();
+                            hide();
                             MainWindow *menu= new MainWindow;
                             menu->show();
 
@@ -659,7 +729,7 @@ void Juego::keyPressEvent(QKeyEvent *event)
 
                     }
                     else if(modo=="2"){
-
+                        music->stop();
                         QFile file("C:/Users/user/Documents/Parking_simulator/Registro/multijugador.txt");
                          QFile file2("C:/Users/user/Documents/Parking_simulator/Registro/multijugador.txt");
                         file.open(QIODevice::ReadOnly | QIODevice::Text);
@@ -676,6 +746,7 @@ void Juego::keyPressEvent(QKeyEvent *event)
                             }
                             file.close();
                             file2.close();
+                            hide();
                             MainWindow *menu= new MainWindow;
                             menu->show();
 
@@ -729,7 +800,7 @@ void Juego::keyPressEvent(QKeyEvent *event)
 
                 }
                     else if(modo=="2"){
-
+                        music->stop();
                         QFile file("C:/Users/user/Documents/Parking_simulator/Registro/multijugador.txt");
                          QFile file2("C:/Users/user/Documents/Parking_simulator/Registro/multijugador.txt");
                         file.open(QIODevice::ReadOnly | QIODevice::Text);
@@ -746,6 +817,7 @@ void Juego::keyPressEvent(QKeyEvent *event)
                             }
                             file.close();
                             file2.close();
+                            hide();
                             MainWindow *menu= new MainWindow;
                             menu->show();
 
@@ -798,7 +870,7 @@ void Juego::keyPressEvent(QKeyEvent *event)
 
                     }
                         else if(modo=="2"){
-
+                            music->stop();
                             QFile file("C:/Users/user/Documents/Parking_simulator/Registro/multijugador.txt");
                              QFile file2("C:/Users/user/Documents/Parking_simulator/Registro/multijugador.txt");
                             file.open(QIODevice::ReadOnly | QIODevice::Text);
@@ -815,6 +887,7 @@ void Juego::keyPressEvent(QKeyEvent *event)
                                 }
                                 file.close();
                                 file2.close();
+                                hide();
                                 MainWindow *menu= new MainWindow;
                                 menu->show();
 
